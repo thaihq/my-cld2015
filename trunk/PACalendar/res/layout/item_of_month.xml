@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/calendar_button_selector" >
+
+<!--     <Button -->
+<!--         android:id="@+id/calendar_day_grid" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_gravity="center" -->
+<!--         android:background="@drawable/calendar_button_selector" -->
+<!--         android:textAppearance="?android:attr/textAppearanceMedium" -->
+<!--         android:textColor="#FFFFFF" > -->
+<!--     </Button> -->
+
+    <TextView
+        android:id="@+id/tv_day_gridview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="18dp"
+        android:text="21" >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/img_ngayhd"
+        android:layout_width="19dip"
+        android:layout_height="19dip"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="5dp"
+        android:layout_alignParentRight="true"
+         />
+
+</RelativeLayout>
