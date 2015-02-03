@@ -1,8 +1,13 @@
 package com.pa.ipv01.pacalendar;
 
 
+import java.util.Calendar;
+
 import com.pa.pacalendar.R;
 
+import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
+import android.app.Dialog;
 import android.app.LoaderManager;
 import android.app.TabActivity;
 import android.content.Intent;
@@ -10,15 +15,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.DatePicker;
 import android.widget.TabHost;
 
 /**
  * Created by Ipv01 on 1/19/2015.
  */
 @SuppressWarnings({ "unused", "deprecation" })
-public class MainActivity extends TabActivity implements TabHost.OnTabChangeListener {
+public class MainActivity extends TabActivity implements TabHost.OnTabChangeListener,OnDateSetListener {
 
-    TabHost tabHost;
+    static TabHost tabHost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +54,7 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
         tabHost.addTab(spec);
 
         /************* Tab chon ngay ************/
-        intent = new Intent().setClass(this, DayChoice.class);
+        intent = new Intent().setClass(this, DayChoice.class);        
         spec = tabHost.newTabSpec("Tab day choice").setIndicator("")
                 .setContent(intent);
         tabHost.addTab(spec);
@@ -70,12 +76,18 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
         spec = tabHost.newTabSpec("Tab other view").setIndicator("")
                 .setContent(intent);
         tabHost.addTab(spec);
+        /**************/
+        intent = new Intent().setClass(this, VanKhan.class);
+        spec = tabHost.newTabSpec("Tab van khan").setIndicator("")
+                .setContent(intent);
+        tabHost.addTab(spec);
 
         // Set drawable images to tab
         tabHost.getTabWidget().getChildAt(1).setBackgroundResource(R.drawable.btn_chonngay);
         tabHost.getTabWidget().getChildAt(2).setBackgroundResource(R.drawable.btn_lichthang);
         tabHost.getTabWidget().getChildAt(3).setBackgroundResource(R.drawable.btn_ghichu);
         tabHost.getTabWidget().getChildAt(4).setBackgroundResource(R.drawable.btn_xemthem);
+        tabHost.getTabWidget().getChildAt(5).setBackgroundResource(R.drawable.btn_vankhan);
 
         // Set Tab1 as Default tab and change image
         tabHost.getTabWidget().setCurrentTab(0);
@@ -97,6 +109,8 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
                 tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_ghichu);
             else if(i==4)
                 tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_xemthem);
+            else if(i==5)
+                tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_vankhan);
         }
 
 
@@ -105,12 +119,48 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
         if(tabHost.getCurrentTab()==0)
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_ngayhientai_down);
         else if(tabHost.getCurrentTab()==1)
+        {
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_chonngay_down);
+//            newFragment.show(manager, tag);
+//            showDialog(DATE_DIALOG_ID);
+        }
         else if(tabHost.getCurrentTab()==2)
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_lichthang_down);
         else if(tabHost.getCurrentTab()==3)
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_ghichu_down);
         else if(tabHost.getCurrentTab()==4)
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_xemthem_down);
+        else if(tabHost.getCurrentTab()==5)
+            tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_vankhan_down);
+    }
+    
+    static final int DATE_DIALOG_ID=999; 
+    int day,moth,year;
+    
+    @Override
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        // TODO Auto-generated method stub
+        //return super.onCreateDialog(id);
+        switch (id) {
+        case DATE_DIALOG_ID:
+        	Calendar cal=Calendar.getInstance();
+            day=cal.get(Calendar.DAY_OF_MONTH);
+            year=cal.get(Calendar.YEAR);
+            moth=cal.get(Calendar.MONTH);
+            return new DatePickerDialog(this, this, year, moth, day);
+            
+        }
+        return null;
+    }
+
+    @Override
+    public void onDateSet(DatePicker dp, int selectedYear, int selMonth, int selDay) {
+        // TODO Auto-generated method stub
+        year=selectedYear;
+        moth=selMonth;
+        day=selDay;
+        dp.init(year, year, day, null);
+//        tvDate.setText(moth+"-"+day+"-"+year);
     }
 }
