@@ -16,8 +16,8 @@ import android.widget.TextView;
 public class CustomClock extends TextView {
 
     Calendar mCalendar;
-    private final static String m12 = "hh:mm aa";
-    private final static String m24 = "kk:mm";
+    private final static String m12 = "hh:mm:ss a";
+    private final static String m24 = "kk:mm:ss";
     private FormatChangeObserver mFormatChangeObserver;
 
     private Runnable mTicker;
@@ -89,9 +89,9 @@ public class CustomClock extends TextView {
 
     private void setFormat() {
         if (get24HourMode()) {
-            mFormat = m24;
-        } else {
             mFormat = m12;
+        } else {
+            mFormat = m24;
         }
     }
 
