@@ -24,6 +24,7 @@
         <activity android:name="com.pa.ipv01.pacalendar.MonthCalendar"></activity>
         <activity android:name="com.pa.ipv01.pacalendar.NoteAdd"></activity>
         <activity android:name="com.pa.ipv01.pacalendar.OtherView"></activity>
+        <activity android:name="com.pa.ipv01.pacalendar.VanKhan"></activity>
     </application>
 
 </manifest>
