@@ -1,0 +1,37 @@
+package com.pa.ipv01.object;
+
+public class objDanhNgon {
+
+	String[] danhNgon=new String[]{"Tôi đi tuy châm, nhưng không bao giờ lùi!"
+									, "Nếu thực sự muốn yêu thương, ta phải học cách tha thứ-Teresa"
+									, "Khi nhìn về phía mặt trời các bóng tối sẽ khuất sau lưng ta. (Whitman)"
+									, "Chưa hề có ai, kể cả thi sĩ, có thể đo lường sức chứa của trái tim.(Z.Fitgerald)"
+									, "Sẽ không có gì khó nếu ta biết nhìn nó bằng ánh sáng của con tim. (E.Glassglow)"
+									, "Có những món quà được trao đi để được tiếp tục trao cho người khác. (J.Bennett)"
+									, "Cái nhìn của chúng ta quyết định cuộc sống của chúng ta. (F.W.Lemore)"
+									, "Mực có thể tẩy được nhưng ký ức thì không xóa nhòa theo thời gian. (Anita Loos)"
+									, "Ở đâu có tình yêu, ở đó có sự sống. (Lev Tolstoy)"
+									, "Mọi thứ chỉ thật sự chấm dứt khi bạn thôi không cố gắng. (Khuyết Danh)"
+									, "Thất bại thật sự chỉ khi bạn thật sự bỏ cuộc."
+									, "Có những lời chia tay không phải vì hết yêu, mà đơn giản không bên nhau được nữa."
+									, "Yêu một người không phải người đó đặc biệt, mà là vì cảm giác đặc biệt."
+									, "Sống chậm lại, nghĩ khác đi, và yêu thương nhiều hơn."
+									, "Có thể với thế giới, bạn chỉ là một người.Nhưng với một người nào đó, bạn là cả thế giới."
+									, "Đừng lãng phí thời gian với những người không dành thời gian cho bạn."
+									, "Chỉ cần mỉm cười mỗi ngày, bạn sẽ phát hiện cuộc sống thật thú vị."
+									, "Nghịch cảnh sẽ làm bạn hiểu bản thân bạn hơn."
+									, "Đừng để bị thúc đẩy bởi khó khăn, mà hãy để những ước mơ thúc giục bạn."
+									, "Tình yêu như cánh bướm, bạn càng muốn bắt nó càng bay xa hơn."
+									, "Đừng nên nói 'Yêu' khi bạn chưa chắc chắn."
+									, "Tình yêu không làm bạn hoàn hảo, nó sẽ làm bạn tốt hơn."
+									, "Quà tặng quý giá nhất là sự khoan dung."
+									, "Kẻ thù lớn nhất của đời người là chính bạn. (Phật dạy)"
+									, "Tiền thì chỉ có giá trị khi nó mang lại hạnh phúc cho người khác."
+									, "Nếu bạn làm việc bạn luôn làm, bạn sẽ nhận được thứ bạn luôn nhận.(Anon)"
+									, "Nếu bạn  nghỉ ngơi quá lâu, bạn sẽ bị rỉ sét. (Helen Hayes)"
+									, "Những cánh cửa cơ hội được đánh dấu đẩy và kéo. (Vô Danh)"
+									, "Tất cả vinh quang đều bắt đầu từ sự dám bắt đầu. (Eugene F Ware)"
+									, "Ngôn ngữ của tình bạn không phải ngôn từ mà là ý nghĩa.(Henry)"
+									, "Tình bạn của một người là thước đo tốt nhất giá trị của họ.(C.Darwin)"
+									, ""};	
+}
