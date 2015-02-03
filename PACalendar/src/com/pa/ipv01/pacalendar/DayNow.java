@@ -17,9 +17,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -28,12 +30,13 @@ import android.widget.ViewFlipper;
 /**
  * Created by Ipv01 on 1/19/2015.
  */
+
 public class DayNow extends Activity implements OnClickListener{
 	
 	objCalendar datelunar =new objCalendar();
 	busCalendar buscalendar =new busCalendar();
-	Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+07:00"));
-	Date date;
+	static Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+07:00"));
+	static Date date;
 	
 	Animation animationleft;
 	private ViewFlipper viewFlipper;
@@ -52,7 +55,7 @@ public class DayNow extends Activity implements OnClickListener{
 		viewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
 		viewFlipper.addView(getDayNow());
 		
-		Button buttonHomNay=(Button)findViewById(R.id.btn_HomNay);
+		Button buttonHomNay=(Button)findViewById(R.id.btn_homnay);
 		Button buttonDetail=(Button)findViewById(R.id.btn_detail);	
 		Button buttonPre=(Button)findViewById(R.id.btn_pre);
 		Button buttonNext=(Button)findViewById(R.id.btn_next);
@@ -74,35 +77,46 @@ public class DayNow extends Activity implements OnClickListener{
 			buscalendar=new busCalendar();
 			datelunar=new objCalendar();
 			datelunar=buscalendar.getConvertSolar2Lunar(date);
+			int isHoangDao=buscalendar.hoangDao(datelunar.getMonth()
+					, buscalendar.getCanChiLunarDay(datelunar.getDaySolar()
+													, datelunar.getMonthSolar()
+													, datelunar.getYearSolar())[1]);
 
-//			String monthYearSolar = "Tháng "
-//					+ (calendar.get(Calendar.MONTH) + 1) + " Năm "
-//					+ calendar.get(Calendar.YEAR);
-//			int daySolar =calendar.get( Calendar.DAY_OF_MONTH);
-
-			TextView tvMonthYearDuong = (TextView) findViewById(R.id.tvMonthYearDuong);
-			TextView tvThuDay = (TextView) findViewById(R.id.tvThu);
-			TextView tvCanChiYear = (TextView) findViewById(R.id.tvCanChiYear);
-			TextView tvCanChiDay = (TextView) findViewById(R.id.tvCanChiDay);
-			TextView tvCanChiMonth = (TextView) findViewById(R.id.tvCanChiMonth);
-			TextView tvHour = (TextView) findViewById(R.id.tvGio);
-			TextView tvDayAM = (TextView) findViewById(R.id.tvDayAM);
-			TextView tvMothAm = (TextView) findViewById(R.id.tvMonthAm);
-			TextView tvYearAm = (TextView) findViewById(R.id.tvYearAM);
+			TextView tvMonthYearDuong = (TextView) findViewById(R.id.tv_monthyearduong);
+			TextView tvThuDay = (TextView) findViewById(R.id.tv_thu);
+			TextView tvCanChiYear = (TextView) findViewById(R.id.tv_canchiyear);
+//			TextView tvCanChiDay = (TextView) findViewById(R.id.tvCanChiDay);
+			TextView tvCanChiMonth = (TextView) findViewById(R.id.tv_canchimonth);
+//			TextView tvHour = (TextView) findViewById(R.id.tvGio);
+			TextView tvDayAM = (TextView) findViewById(R.id.tv_dayam);
+			TextView tvMothAm = (TextView) findViewById(R.id.tv_montham);
+//			TextView tvYearAm = (TextView) findViewById(R.id.tvYearAM);
+			TextView tvHoangDao= (TextView) findViewById(R.id.tv_hoangdao);
 
 			tvMonthYearDuong.setText("Tháng "+datelunar.getMonthSolar()+" Năm "
 											+datelunar.getYearSolar());
 			tvThuDay.setText(datelunar.getThuOfWeek());
 			getIcDate(datelunar.getDaySolar());
 			getIcCanChiDay(datelunar);
-			tvHour.setText(datelunar.getHour()+":"+datelunar.getMin()+"Giờ");
+//			tvHour.setText(datelunar.getHour()+":"+datelunar.getMin()+"Giờ");
 			tvDayAM.setText(String.valueOf(datelunar.getDay()));
-			tvCanChiDay.setText(datelunar.getCanChiDay());
+//			tvCanChiDay.setText(datelunar.getCanChiDay());
 			tvMothAm.setText(String.valueOf(datelunar.getMonth()));
 			tvCanChiMonth.setText(datelunar.getCanChiMonth());
-			tvYearAm.setText(String.valueOf(datelunar.getYear()));
+//			tvYearAm.setText(String.valueOf(datelunar.getYear()));
 			tvCanChiYear.setText(datelunar.getCanChiYear());
 			
+			if(isHoangDao==0)
+			{			
+				tvHoangDao.setText("Ngày hoàng đạo");
+			}
+			else if(isHoangDao==1)
+			{
+				tvHoangDao.setText("Ngày hắc đạo");
+			}
+			else 
+				tvHoangDao.setText("Ngày bình thường");
+				
 		} catch (NullPointerException e) {
 			Log.e("loi->", e.toString());
 		}
@@ -121,6 +135,7 @@ public class DayNow extends Activity implements OnClickListener{
 				+ datelunar.getYearSolar();
 		
 		final Dialog dialog = new Dialog(context);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.dialog_day_detail);
 				
 		TextView textDayDuong = (TextView) dialog.findViewById(R.id.tvDayDuongDt);
@@ -233,7 +248,7 @@ public class DayNow extends Activity implements OnClickListener{
 	
 	private View getDayNow() {
 		inflater = getLayoutInflater();
-		RelativeLayout layout = (RelativeLayout) inflater.inflate(
+		LinearLayout layout = (LinearLayout) inflater.inflate(
 			R.layout.day_now, null);
 		return layout;
 	}
@@ -242,7 +257,7 @@ public class DayNow extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.btn_HomNay:
+		case R.id.btn_homnay:
 			date=new Date();
 			getDay(date);
 			break;
@@ -268,4 +283,11 @@ public class DayNow extends Activity implements OnClickListener{
 		}	
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		getDay(date);
+	}
+	
 }

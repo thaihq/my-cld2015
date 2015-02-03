@@ -2,6 +2,7 @@ package com.pa.ipv01.customadapter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -23,7 +24,7 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 	private final objMonth monthView;
 	ArrayList<DayMonth> listDayMonth;
 	static busCalendar busMonth=new busCalendar();
-	int[] listColors=new int[]{R.color.lightgray,R.color.white,R.color.orrange};
+	int[] listColors=new int[]{R.color.gray,R.color.white,R.color.red};
 	
 	public MonthViewAdapter(Context context,objMonth monthview)
 	{
@@ -61,8 +62,9 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 		}
 		
 		TextView tvDay=(TextView)row.findViewById(R.id.tv_day_gridview);
+		
 		tvDay.setText(String.valueOf(listDayMonth.get(position).day));
-		tvDay.setTextColor(listColors[listDayMonth.get(position).colorDay]);
+		tvDay.setTextColor(context.getResources().getColor(listColors[listDayMonth.get(position).colorDay]));
 		
 		ImageView imgHD=(ImageView) row.findViewById(R.id.img_ngayhd);
 		if(listDayMonth.get(position).ngayHD==0)
@@ -72,6 +74,11 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 		else if(listDayMonth.get(position).ngayHD==1)
 		{
 			imgHD.setImageResource(R.drawable.hacdao);
+		}
+		
+		if(listDayMonth.get(position).isDayNow==true)
+		{
+			tvDay.setBackgroundResource(R.drawable.day_hientai);
 		}
 		
 		return row;
@@ -102,7 +109,7 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 			int[] daylunar=busMonth.convertSolar2Lunar(tempday, temmonth, temyear, 7.0);
 			int[] chiDay=busMonth.getCanChiLunarDay(tempday, temmonth, temyear);
 			int hd=busMonth.hoangDao(daylunar[1], chiDay[1]);
-			DayMonth tempDayMonth=new DayMonth(tempday, 0, hd);
+			DayMonth tempDayMonth=new DayMonth(tempday, 0, hd,false);
 			listDayMonth.add(tempDayMonth);
 		}
 		
@@ -111,7 +118,12 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 			int[] daylunar=busMonth.convertSolar2Lunar(i, monthView.getMonth(), monthView.getYear(), 7.0);
 			int[] chiDay=busMonth.getCanChiLunarDay(i, monthView.getMonth(), monthView.getYear());
 			int hd=busMonth.hoangDao(daylunar[1], chiDay[1]);
-			DayMonth tempDayMonth=new DayMonth(i, 1, hd);
+			
+			DayMonth tempDayMonth;
+			if(isBoolToDay(i, monthView.getMonth(), monthView.getYear())==true)
+				tempDayMonth=new DayMonth(i, 1, hd,true);
+			else
+				tempDayMonth=new DayMonth(i, 1, hd,false);
 			listDayMonth.add(tempDayMonth);
 		}
 				
@@ -126,9 +138,25 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 			int[] daylunar=busMonth.convertSolar2Lunar(tempday, temmonth, temyear, 7.0);
 			int[] chiDay=busMonth.getCanChiLunarDay(tempday, temmonth, temyear);
 			int hd=busMonth.hoangDao(daylunar[1], chiDay[1]);
-			DayMonth tempDayMonth=new DayMonth(tempday, 0, hd);
+			DayMonth tempDayMonth=new DayMonth(tempday, 0, hd,false);
 			listDayMonth.add(tempDayMonth);
 		}
+	}
+	
+	private boolean isBoolToDay(int day, int month, int year)
+	{
+		boolean isReturn=false;
+		Date date=new Date();
+		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+07:00"));
+		calendar.setTime(date);
+		
+		if(day==calendar.get(Calendar.DAY_OF_MONTH)
+				&& month==(calendar.get(Calendar.MONTH)+1)
+				&& year==calendar.get(Calendar.YEAR))
+			isReturn=true;
+		else isReturn=false;
+		
+		return isReturn;
 	}
 }
 
@@ -136,10 +164,12 @@ class DayMonth{
 	int day;
 	int colorDay;
 	int ngayHD;
-	public DayMonth(int day, int color,int hd)
+	boolean isDayNow=false;
+	public DayMonth(int day, int color,int hd,boolean istoday)
 	{
 		this.day=day;
 		this.colorDay=color;
 		this.ngayHD=hd;
+		this.isDayNow=istoday;
 	}
 }

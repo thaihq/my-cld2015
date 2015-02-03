@@ -33,7 +33,6 @@ public class MonthCalendar extends Activity implements OnClickListener{
 		Date date=new Date();
 		calendar.setTime(date);
 		
-//		int day = calendar.get(Calendar.DAY_OF_MONTH);
 		int month = calendar.get(Calendar.MONTH) + 1;
 		int year = calendar.get(Calendar.YEAR);
 		
@@ -83,6 +82,5 @@ public class MonthCalendar extends Activity implements OnClickListener{
 			gridView.setAdapter(new MonthViewAdapter(this, monthview));
 		}
 	}
-	
 	
 }

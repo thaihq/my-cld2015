@@ -45,6 +45,10 @@ public class busCalendar {
 		return objMonthView;
 	}
 	
+	public String isNgayLe(objCalendar objDate)
+	{
+		return null;
+	}
 	/**cac phuong thuc tinh toan lich am
 	 * 
 	 */
@@ -153,7 +157,7 @@ public class busCalendar {
 		return i-1;
 	}
 
-	public static int[] convertSolar2Lunar(int dd,int mm,int yy,Double timeZone)
+	public int[] convertSolar2Lunar(int dd,int mm,int yy,Double timeZone)
 	{
 		int k, dayNumber, monthStart, a11, b11, lunarDay, lunarMonth, lunarYear, lunarLeap;
 		dayNumber = jdFromDate(dd, mm, yy);
@@ -194,7 +198,7 @@ public class busCalendar {
 		return new int[]{lunarDay,lunarMonth,lunarYear,lunarLeap};
 	}
 
-	public static int[] convertLunar2Solar(int lunarDay,int lunarMonth,int lunarYear,int lunarLeap,Double timeZone)
+	public int[] convertLunar2Solar(int lunarDay,int lunarMonth,int lunarYear,int lunarLeap,Double timeZone)
 	{
 		int k, a11, b11, off, leapOff, leapMonth, monthStart;
 		if (lunarMonth < 11) {
@@ -291,7 +295,7 @@ public class busCalendar {
 	
 	public int hoangDao(int monthLunar, int chiDay)
 	{
-		int hd=2;
+		int hd=2; //Ngay binh thuong
 		switch (monthLunar) {
 		case 12:
 		case 7:
