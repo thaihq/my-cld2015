@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pa.pacalendar"
     android:versionCode="1"
@@ -12,19 +13,35 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity 
-            android:name="com.pa.ipv01.pacalendar.MainActivity">
+        <activity android:name="com.pa.ipv01.pacalendar.MainActivity" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.pa.ipv01.pacalendar.DayNow"></activity>
-        <activity android:name="com.pa.ipv01.pacalendar.DayChoice"></activity>
-        <activity android:name="com.pa.ipv01.pacalendar.MonthCalendar"></activity>
-        <activity android:name="com.pa.ipv01.pacalendar.NoteAdd"></activity>
-        <activity android:name="com.pa.ipv01.pacalendar.OtherView"></activity>
-        <activity android:name="com.pa.ipv01.pacalendar.VanKhan"></activity>
+        <activity android:name="com.pa.ipv01.pacalendar.DayNow" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.DayChoice" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.MonthCalendar" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.NoteAdd" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.OtherView" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.VanKhan" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.VanKhanDetail" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.Zodiac" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.ZodiacDetail" >
+        </activity>
+        <activity
+            android:name="com.pa.ipv01.pacalendar.Horoscope"
+            android:label="@string/title_activity_horoscope" >
+        </activity>
     </application>
 
 </manifest>
