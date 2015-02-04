@@ -79,7 +79,6 @@ public class VanKhanres {
 	public static final String ledang = "Lễ Dâng Sao Giải Hạn Tết Nguyên Tiêu";
 
 	// them
-
 	public static final String lephat22 = "Lễ phật";
 
 }
