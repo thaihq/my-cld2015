@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="itemlist_note_title">20dp</dimen>
+    <dimen name="griditem_cunghd_tvcunghd">15dp</dimen>
+</resources>
