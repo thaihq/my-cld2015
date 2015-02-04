@@ -9,17 +9,18 @@
     android:paddingTop="10dp" >
 
     <ImageView
-        android:id="@+id/griditem_tuvi_imgicon"
+        android:id="@+id/griditem_cunghd_imgicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/des_zodiac"
-        android:src="@drawable/mui_btn" />
+        android:src="@drawable/h6" />
 
-    <ImageView
-        android:id="@+id/griditem_tuvi_imgtext"
+    <TextView
+        android:id="@+id/griditem_cunghd_tvcunghd"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:contentDescription="@string/des_zodiac"
-        android:src="@drawable/mui" />
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/griditem_cunghd_tvcunghd" />
 
 </LinearLayout>
