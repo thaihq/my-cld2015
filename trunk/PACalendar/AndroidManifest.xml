@@ -38,8 +38,7 @@
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.ZodiacDetail" >
         </activity>
-        <activity
-            android:name="com.pa.ipv01.pacalendar.Horoscope" >
+        <activity android:name="com.pa.ipv01.pacalendar.Horoscope" >
         </activity>
     </application>
 
