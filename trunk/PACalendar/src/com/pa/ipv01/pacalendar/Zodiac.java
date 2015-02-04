@@ -11,14 +11,14 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
-import com.pa.ipv01.customadapter.GridCungHDAdapter;
+import com.pa.ipv01.customadapter.ZodiacGridAdapter;
 import com.pa.ipv01.resource.Zodiacres;
 import com.pa.pacalendar.R;
 
 public class Zodiac extends Activity {
 
 	private GridView gridView;
-	private GridCungHDAdapter adapter;
+	private ZodiacGridAdapter adapter;
 	private ArrayList<String> title;
 	private ArrayList<Integer> icon;
 
@@ -31,7 +31,7 @@ public class Zodiac extends Activity {
 		setContentView(R.layout.zodiac_grid);
 
 		prepareListData();
-		adapter = new GridCungHDAdapter(this, title, icon);
+		adapter = new ZodiacGridAdapter(this, title, icon);
 		gridView = (GridView) findViewById(R.id.accunghd_gridview);
 		gridView.setAdapter(adapter);
 

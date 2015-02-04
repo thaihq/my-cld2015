@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
-import com.pa.ipv01.customadapter.GridTuviAdapter;
+import com.pa.ipv01.customadapter.HoroscopeGridAdapter;
 import com.pa.ipv01.resource.Horoscoperes;
 import com.pa.pacalendar.R;
 
@@ -18,7 +18,7 @@ public class Horoscope extends Activity {
 	private ArrayList<Integer> title;
 	private ArrayList<Integer> icon;
 	private GridView gridView;
-	private GridTuviAdapter adapter;
+	private HoroscopeGridAdapter adapter;
 	public static int isClicked;
 
 	@Override
@@ -28,7 +28,7 @@ public class Horoscope extends Activity {
 		setContentView(R.layout.horoscope);
 		
 		prepareListData();
-		adapter = new GridTuviAdapter(this, title, icon);
+		adapter = new HoroscopeGridAdapter(this, title, icon);
 		gridView = (GridView) findViewById(R.id.ac_tuvi_grid);
 		gridView.setAdapter(adapter);
 
