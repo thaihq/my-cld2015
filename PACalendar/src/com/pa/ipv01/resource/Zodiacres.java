@@ -14,7 +14,7 @@ public class Zodiacres {
 	public static final String nhanma = "Nhân Mã (22/11-21/12)";
 	public static final String maket = "Ma Kết (22/12-19/1)";
 	public static final String baobinh = "Bảo Bình (20/1-18/2)";
-	public static final String songngu = "Song Ngư (19/2-20/3)";
+	public static final String songngu = "song Ngư (19/2-20/3)";
 
 	public static final int bd = R.drawable.h1;
 	public static final int kn = R.drawable.h2;
