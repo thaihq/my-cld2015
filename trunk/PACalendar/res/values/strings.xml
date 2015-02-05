@@ -2,11 +2,7 @@
 <resources>
 
     <string name="app_name">PACalendar</string>
-    <string name="title_activity_van_khan_detail">VanKhanDetail</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_zodiac">Zodiac</string>
-    <string name="title_activity_zodiac_detail">ZodiacDetail</string>
-    <string name="title_activity_horoscope">Horoscope</string>
     <string name="des_zodiac">click here</string>
 
 </resources>
