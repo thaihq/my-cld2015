@@ -40,6 +40,8 @@
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.Horoscope" >
         </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.NoteDetail" >
+        </activity>
     </application>
 
 </manifest>

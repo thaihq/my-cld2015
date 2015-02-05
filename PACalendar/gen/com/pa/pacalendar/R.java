@@ -256,21 +256,18 @@ public final class R {
         public static final int item_of_month=0x7f03000c;
         public static final int main=0x7f03000d;
         public static final int month_gridview=0x7f03000e;
-        public static final int noteadd=0x7f03000f;
-        public static final int otherview=0x7f030010;
-        public static final int vankhan=0x7f030011;
-        public static final int vankhandetail=0x7f030012;
-        public static final int zodiac_grid=0x7f030013;
-        public static final int zodiacdetail=0x7f030014;
+        public static final int note_detail=0x7f03000f;
+        public static final int noteadd=0x7f030010;
+        public static final int otherview=0x7f030011;
+        public static final int vankhan=0x7f030012;
+        public static final int vankhandetail=0x7f030013;
+        public static final int zodiac_grid=0x7f030014;
+        public static final int zodiacdetail=0x7f030015;
     }
     public static final class string {
         public static final int app_name=0x7f070000;
-        public static final int des_zodiac=0x7f070006;
-        public static final int hello_world=0x7f070002;
-        public static final int title_activity_horoscope=0x7f070005;
-        public static final int title_activity_van_khan_detail=0x7f070001;
-        public static final int title_activity_zodiac=0x7f070003;
-        public static final int title_activity_zodiac_detail=0x7f070004;
+        public static final int des_zodiac=0x7f070002;
+        public static final int hello_world=0x7f070001;
     }
     public static final class style {
         /** 
