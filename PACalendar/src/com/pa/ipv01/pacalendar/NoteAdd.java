@@ -1,75 +1,52 @@
 package com.pa.ipv01.pacalendar;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.pa.ipv01.customadapter.NoteListAdapter;
+import com.pa.ipv01.object.objNote;
 import com.pa.pacalendar.R;
 
 /**
  * Created by Ipv01 on 1/19/2015.
  */
 public class NoteAdd extends Activity {
-
-	ListView list;
-	NoteListAdapter adapter;
-	ArrayList<String> title;
-	ArrayList<String> content;
-	ArrayList<String> date;
-	ArrayList<String> time;
-	ArrayList<Integer> del;
-	ArrayList<Integer> id;
+	private ListView list;
+	private NoteListAdapter adapter;
+	private Button btn_add;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.noteadd);
-		prepareListData();
-//		adapter = new NoteListAdapter(this, title, content, date, time, id);
-		list = (ListView) findViewById(R.id.noteadd_list);
-		list.setAdapter(adapter);
-		list.setOnItemClickListener(new OnItemClickListener() {
+
+		btn_add = (Button) findViewById(R.id.noteadd_btn_add);
+		btn_add.setOnClickListener(new View.OnClickListener() {
+
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1,
-					int position, long arg3) {
-				System.out.println("clicked :" + position);
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(NoteAdd.this, NoteDetail.class);
+				startActivity(intent);
 			}
 		});
+
+		objNote note[] = new objNote[] {
+				new objNote("baothuc", "day di nhau", "6/2/2015", "12:30 pm"),
+				new objNote(
+						"hoang dao",
+						"day di nhau, day di nhau, day di nhau, day di nhau, day di nhau, day di nhau, day",
+						"7/2/2015", "12:30 pm"),
+
+		};
+		adapter = new NoteListAdapter(this, R.layout.item_list_noteadd, note);
+		list = (ListView) findViewById(R.id.noteadd_list);
+		list.setAdapter(adapter);
 	}
-
-	public void prepareListData() {
-
-		id = new ArrayList<Integer>();
-		id.add(1);
-		id.add(2);
-		id.add(3);
-		id.add(4);
-
-		title = new ArrayList<String>();
-		title.add("nha giao vn");
-		title.add("quoc te phu nu");
-		title.add("Valentine");
-		content = new ArrayList<String>();
-		content.add("nha giao vn");
-		content.add("quoc te phu nu");
-		content.add("Valentine");
-		date = new ArrayList<String>();
-		date.add("nha giao vn");
-		date.add("quoc te phu nu");
-		date.add("Valentine");
-		time = new ArrayList<String>();
-		time.add("nha giao vn");
-		time.add("quoc te phu nu");
-		time.add("Valentine");
-
-	}
-
 }

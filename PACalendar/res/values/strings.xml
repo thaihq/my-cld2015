@@ -4,5 +4,7 @@
     <string name="app_name">PACalendar</string>
     <string name="hello_world">Hello world!</string>
     <string name="des_zodiac">click here</string>
+    <string name="noteadd_detail_tvtitle">Tiêu đề</string>
+    <string name="noteadd_detail_tvcontent">Nội dung</string>
 
 </resources>
