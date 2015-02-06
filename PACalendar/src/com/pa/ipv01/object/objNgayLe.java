@@ -2,10 +2,11 @@ package com.pa.ipv01.object;
 
 public class objNgayLe {
 
-	String[] ngayLeDuong=new String[]{"1/1-Tết Dương Lịch"
+	public boolean red=false;
+	String[] ngayLeDuong=new String[]{"1/1-Tết Dương Lịch-Đ"
 									, "3/2-Ngày Thành Lập Đảng CSVN"
 									, "14/2-Lễ Tình Nhân"
-									, "27/2-Ngày Nhà Giáo Việt Nam"
+									, "27/2-Ngày Thầy thuốc Việt Nam"
 									, "8/3-Quốc Tế Phụ Nữ"
 									, "26/3-Ngày Thành Lập Đoàn TNCSHCM"
 									, "21/4-Ngày Sách Việt Nam"
@@ -32,4 +33,41 @@ public class objNgayLe {
 									, "3/1-Mùng 3 Tết-Đ"
 									, "15/7-Lễ Vu Lan"
 									, "15/8-Tết Trung Thu"};
+	
+	public String getNgayLe(objCalendar objdate)
+	{
+		String le=null;
+		for(int i=0;i<ngayLeDuong.length;i++)
+		{
+			String[] strLe=ngayLeDuong[i].split("-");
+			String ngay=objdate.getDaySolar()+"/"+objdate.getMonthSolar();
+			if(ngay.equals(strLe[0]))
+			{
+				if((strLe.length==3))
+					red=true;
+				
+				le=strLe[1];
+				break;
+			}
+		}
+		for(int i=0; i<ngayLeAm.length;i++)
+		{
+			String[] strLe=ngayLeAm[i].split("-");
+			String ngay=objdate.getDay()+"/"+objdate.getMonth();
+			if(ngay.equals(strLe[0]))
+			{
+				if(le==null)
+					le=strLe[1];
+				else
+					le+=" và "+strLe[1];
+				
+				if((strLe.length==3))
+					red=true;
+				
+				break;
+			}
+		}
+		
+		return le;
+	}
 }
