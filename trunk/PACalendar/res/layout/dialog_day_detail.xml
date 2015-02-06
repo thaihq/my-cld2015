@@ -1,124 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rdialoglayout"
     android:layout_width="match_parent"
     android:layout_height="400dip"
     android:background="@drawable/bg2"
-    android:id="@+id/rdialoglayout"
-     >
-    <LinearLayout 
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"       
-        android:weightSum="1"
-        android:orientation="vertical"
-        >
-        <LinearLayout 
-            android:background="@drawable/top_chitietngay"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/top_chitietngay" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="vertical" >
+
+        <RelativeLayout
             android:layout_width="fill_parent"
-        	android:layout_height="0dp"
-        	android:layout_weight="0.1"></LinearLayout>
-        <LinearLayout             
-            android:layout_width="match_parent"
-        	android:layout_height="0dp"
-        	android:layout_weight="0.8"
-        	android:orientation="vertical">
-            <RelativeLayout 
-                android:layout_width="fill_parent"
-        		android:layout_height="fill_parent">
-                <TextView 
-                    android:id="@+id/tvDuongDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dương lịch:"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="20dip"
-                    android:paddingTop="10dip"
-                    android:textSize="20dip"
-                    />
-                <TextView 
-                    android:id="@+id/tvDayDuongDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+ Ngày: 22 - 1 - 2015"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="30dip"
-                    android:layout_below="@+id/tvDuongDt"
-                    android:textSize="16dip"/>
-                <TextView 
-                    android:id="@+id/tvThuDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+ Thứ: 6"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="30dip"
-                    android:textSize="16dip"
-                    android:layout_below="@+id/tvDayDuongDt"/>
-            </RelativeLayout>
-            <RelativeLayout 
-                android:layout_width="fill_parent"
-        		android:layout_height="fill_parent">
-                <TextView 
-                    android:id="@+id/tvAmDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Âm lịch:"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="20dip"
-                    android:paddingTop="5dip"
-                    android:textSize="20dip"
-                    />
-                <TextView 
-                    android:id="@+id/tvDayAmDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+ Ngày: 22 - 1 - 2015"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="30dip"
-                    android:layout_below="@+id/tvAmDt"
-                    android:textSize="16dip"/>
-                <TextView 
-                    android:id="@+id/tvNamCanChiDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+ Năm giáp ngọ"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="30dip"
-                    android:textSize="16dip"
-                    android:layout_below="@+id/tvDayAmDt"/>
-                <TextView 
-                    android:id="@+id/tvThangCanChiDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+ Tháng giáp ngọ"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="30dip"
-                    android:textSize="16dip"
-                    android:layout_below="@+id/tvNamCanChiDt"/>
-                <TextView 
-                    android:id="@+id/tvDayCanChiDt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+ Ngày giáp ngọ"
-                    android:textColor="#ffffff"
-                    android:paddingLeft="30dip"
-                    android:textSize="16dip"
-                    android:layout_below="@+id/tvThangCanChiDt"/>
-            </RelativeLayout>
-        </LinearLayout>
-        <RelativeLayout 
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            >
-            <Button 
-                android:id="@+id/btn_dia_close"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvDuongDt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Close"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
-                />
+                android:paddingLeft="20dip"
+                android:paddingTop="10dip"
+                android:text="Dương lịch:"
+                android:textColor="#ffffff"
+                android:textSize="20dip" />
+
+            <TextView
+                android:id="@+id/tvDayDuongDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDuongDt"
+                android:paddingLeft="30dip"
+                android:text="+ Ngày: 22 - 1 - 2015"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/tvThuDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDayDuongDt"
+                android:paddingLeft="30dip"
+                android:text="+ Thứ: 6"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvAmDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dip"
+                android:paddingTop="5dip"
+                android:text="Âm lịch:"
+                android:textColor="#ffffff"
+                android:textSize="20dip" />
+
+            <TextView
+                android:id="@+id/tvDayAmDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAmDt"
+                android:paddingLeft="30dip"
+                android:text="+ Ngày: 22 - 1 - 2015"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/tvNamCanChiDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDayAmDt"
+                android:paddingLeft="30dip"
+                android:text="+ Năm giáp ngọ"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/tvThangCanChiDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNamCanChiDt"
+                android:paddingLeft="30dip"
+                android:text="+ Tháng giáp ngọ"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/tvDayCanChiDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvThangCanChiDt"
+                android:paddingLeft="30dip"
+                android:text="+ Ngày giáp ngọ"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
         </RelativeLayout>
     </LinearLayout>
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/tab_ghichu" >
+        <Button
+            android:id="@+id/btn_dia_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_undo"
+             />
+    </RelativeLayout>
+
+</LinearLayout>
