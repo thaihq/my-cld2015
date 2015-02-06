@@ -1,5 +1,7 @@
 package com.pa.ipv01.object;
 
+import java.util.Random;
+
 public class objDanhNgon {
 
 	String[] danhNgon=new String[]{"Tôi đi tuy châm, nhưng không bao giờ lùi!"
@@ -33,5 +35,30 @@ public class objDanhNgon {
 									, "Tất cả vinh quang đều bắt đầu từ sự dám bắt đầu. (Eugene F Ware)"
 									, "Ngôn ngữ của tình bạn không phải ngôn từ mà là ý nghĩa.(Henry)"
 									, "Tình bạn của một người là thước đo tốt nhất giá trị của họ.(C.Darwin)"
-									, ""};	
+									, "Cuộc sống vốn không công bằng, Hãy tập quen dần với điều đó. (Bill Gates)"
+									, "Hãy hòa nhã với kẻ dở hơi, bạn só thể phải làm việc với họ. (Bill Gates)"
+									, "Người duy nhất tôi biết đã làm mất 1/4 tỉ USD/năm là chính tôi. (Steven Jobs)"
+									, "Tôi có một câu thần chú - sự tập trung và tính đơn giản. (Steven Jobs)"
+									, "Tôi luôn phấn đấu hết sức, tôi biết mình đã làm được một việc tuyệt vời. (Steven Jobs)"
+									, "Bạn không thể thấy trước tương lai, nhưng phải luôn luôn hướng đến nó. (Steven Jobs)"
+									, "Sáng tạo có nghĩa là nói 'Không' với hàng nghìn thứ. (Steven Jobs)"
+									, "Chất lượng quan trọng hơn số lượng. Một lần home-run còn hơn hai lần double. (Steven Jobs)"
+									, "Tôi muốn phát ra một âm thanh trong vũ trụ. (Steven Jobs)"
+									, "Stay Hungry, stay foolish. (Steven Jobs)"
+									, "Nếu bạn chưa tìm thấy nó, Hày hướng trái tim mình về mọi việc. (Steven Jobs)"
+									, "Thời gian của bạn có hạn, do đó đừng lãng phí nó cho C.S người khác. (Steven Jobs)"
+									, "Làm một tên cướp biển thú vị hơn là làm một anh lính hải quân. (Steven Jobs)"
+									, "Cách duy nhất để cảm thấy hài lòng là làm những việc mà bạn cho là vĩ đại. (Steven Jobs)"
+									, "Đừng để ý kiến của người khác làm mất tiếng nói của trái tim bạn. (Steven Jobs)"
+									, "Keep looking. Don't settle. (Steven Jobs)"
+									, "Sometimes life is going to hit you in the head with a brick. Don't lose faith. (Steven Jobs)"
+									, "Sống khát khao. Sống dại khờ. (Steven Jobs)"};
+	
+	public String randDanhNgon()
+	{
+		Random rd=new Random();
+		int i=rd.nextInt(49);
+		
+		return danhNgon[i];
+	}
 }
