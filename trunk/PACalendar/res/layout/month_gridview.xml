@@ -9,8 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_1_lichthang"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal" >
     </LinearLayout>
 
     <RelativeLayout
@@ -23,31 +22,28 @@
 
         <Button
             android:id="@+id/btn_pre_gridview"
-            android:layout_width="19dp"
-            android:layout_height="19dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/pre"
-             android:layout_toLeftOf="@+id/tvmonth_gridview"
-              />
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/tvmonth_gridview"
+            android:background="@drawable/pre" />
 
         <TextView
             android:id="@+id/tvmonth_gridview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:text="Tháng 1 năm 2015"
             android:textColor="#fff"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"
-            />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_next_gridview"
-            android:layout_width="19dp"
-            android:layout_height="19dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/next"
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="25dp"
             android:layout_toRightOf="@+id/tvmonth_gridview"
-            />
+            android:background="@drawable/next" />
     </RelativeLayout>
 
     <ImageView
@@ -62,11 +58,73 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgtitlethang"
+        android:horizontalSpacing="5dp"
         android:numColumns="7"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="5dp"
-        android:horizontalSpacing="5dp"
-        >
+        android:verticalSpacing="5dp" >
     </GridView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar_girdview"
+        android:background="@drawable/borderlayout"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:weightSum="1" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/img_hoangdao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/hoangdao" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/img_hoangdao"
+                android:text="Hoàng Đạo"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/yellow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/img_hacdao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/hacdao" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/img_hacdao"
+                android:text="Hắc Đạo"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/red" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>
