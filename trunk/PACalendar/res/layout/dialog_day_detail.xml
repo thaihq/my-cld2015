@@ -3,7 +3,7 @@
     android:id="@+id/rdialoglayout"
     android:layout_width="300dip"
     android:layout_height="350dip"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bg1"
     android:orientation="vertical"
     android:weightSum="1" >
 
