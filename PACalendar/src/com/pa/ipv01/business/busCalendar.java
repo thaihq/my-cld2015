@@ -45,10 +45,6 @@ public class busCalendar {
 		return objMonthView;
 	}
 	
-	public String isNgayLe(objCalendar objDate)
-	{
-		return null;
-	}
 	/**cac phuong thuc tinh toan lich am
 	 * 
 	 */
