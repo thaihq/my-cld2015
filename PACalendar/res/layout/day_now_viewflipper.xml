@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
-        android:background="@drawable/bg1_1"
+        android:background="@drawable/bg1_3"
          >
 	</RelativeLayout>
 	
@@ -22,7 +22,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/banner"
-        android:background="@drawable/bg1" >
+        >
 
 <!--         <ScrollView  -->
 <!--             android:layout_width="fill_parent" -->
