@@ -78,7 +78,7 @@ public class MonthViewAdapter extends BaseAdapter implements OnClickListener{
 		
 		if(listDayMonth.get(position).isDayNow==true)
 		{
-			tvDay.setBackgroundResource(R.drawable.day_hientai);
+			row.setBackgroundResource(R.drawable.day_hientai);
 		}
 		
 		return row;
