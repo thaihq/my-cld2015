@@ -19,7 +19,7 @@ public class objNote {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+//
 	public String getTitle() {
 		return title;
 	}
