@@ -13,11 +13,16 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.pa.ipv01.pacalendar.NoteAdd" >
+        <activity android:name="com.pa.ipv01.pacalendar.MainSplash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.MainActivity" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.DayNow" >
@@ -26,7 +31,7 @@
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.MonthCalendar" >
         </activity>
-        <activity android:name="com.pa.ipv01.pacalendar.MainActivity" >
+        <activity android:name="com.pa.ipv01.pacalendar.NoteAdd" >
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.OtherView" >
         </activity>
