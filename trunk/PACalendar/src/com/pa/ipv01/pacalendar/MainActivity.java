@@ -95,6 +95,13 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
     }
 
     @Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		MainSplash.mplay.release();
+	}
+
+	@Override
     public void onTabChanged(String tabId) {
 
         for(int i=0;i<tabHost.getTabWidget().getChildCount();i++)
