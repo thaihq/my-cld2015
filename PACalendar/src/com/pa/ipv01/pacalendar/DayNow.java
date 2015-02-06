@@ -6,6 +6,8 @@ import java.util.TimeZone;
 
 import com.pa.ipv01.business.busCalendar;
 import com.pa.ipv01.object.objCalendar;
+import com.pa.ipv01.object.objDanhNgon;
+import com.pa.ipv01.object.objNgayLe;
 import com.pa.pacalendar.R;
 
 import android.app.Activity;
@@ -73,7 +75,9 @@ public class DayNow extends Activity implements OnClickListener{
 	private void getDay(Date date) {
 		try {
 //			calendar.setTime(date);
-
+			objNgayLe ngayLe=new objNgayLe();
+			objDanhNgon danhNgon=new objDanhNgon();
+			
 			buscalendar=new busCalendar();
 			datelunar=new objCalendar();
 			datelunar=buscalendar.getConvertSolar2Lunar(date);
@@ -81,6 +85,7 @@ public class DayNow extends Activity implements OnClickListener{
 					, buscalendar.getCanChiLunarDay(datelunar.getDaySolar()
 													, datelunar.getMonthSolar()
 													, datelunar.getYearSolar())[1]);
+			String isNgayLe=ngayLe.getNgayLe(datelunar);
 
 			TextView tvMonthYearDuong = (TextView) findViewById(R.id.tv_monthyearduong);
 			TextView tvThuDay = (TextView) findViewById(R.id.tv_thu);
@@ -92,6 +97,7 @@ public class DayNow extends Activity implements OnClickListener{
 			TextView tvMothAm = (TextView) findViewById(R.id.tv_montham);
 //			TextView tvYearAm = (TextView) findViewById(R.id.tvYearAM);
 			TextView tvHoangDao= (TextView) findViewById(R.id.tv_hoangdao);
+			TextView tvDanhNgonOrLe=(TextView) findViewById(R.id.tv_danhngon);
 
 			tvMonthYearDuong.setText("Tháng "+datelunar.getMonthSolar()+" Năm "
 											+datelunar.getYearSolar());
@@ -109,14 +115,33 @@ public class DayNow extends Activity implements OnClickListener{
 			if(isHoangDao==0)
 			{			
 				tvHoangDao.setText("Ngày hoàng đạo");
+				tvHoangDao.setTextColor(this.getResources().getColor(R.color.yellow));
 			}
 			else if(isHoangDao==1)
 			{
 				tvHoangDao.setText("Ngày hắc đạo");
+				tvHoangDao.setTextColor(this.getResources().getColor(R.color.red));
 			}
 			else 
+			{
 				tvHoangDao.setText("Ngày bình thường");
-				
+				tvHoangDao.setTextColor(this.getResources().getColor(R.color.white));
+			}
+			
+			if(isNgayLe==null||isNgayLe=="")
+			{
+				tvDanhNgonOrLe.setText(danhNgon.randDanhNgon());
+				tvDanhNgonOrLe.setTextColor(this.getResources().getColor(R.color.white));
+			}
+			else
+			{
+				tvDanhNgonOrLe.setText(isNgayLe);
+				if(ngayLe.red==true)
+					tvDanhNgonOrLe.setTextColor(this.getResources().getColor(R.color.red));
+				else
+					tvDanhNgonOrLe.setTextColor(this.getResources().getColor(R.color.white));
+			}
+			
 		} catch (NullPointerException e) {
 			Log.e("loi->", e.toString());
 		}
