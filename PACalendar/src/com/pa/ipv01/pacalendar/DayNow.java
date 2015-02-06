@@ -108,9 +108,9 @@ public class DayNow extends Activity implements OnClickListener{
 			tvDayAM.setText(String.valueOf(datelunar.getDay()));
 //			tvCanChiDay.setText(datelunar.getCanChiDay());
 			tvMothAm.setText(String.valueOf(datelunar.getMonth()));
-			tvCanChiMonth.setText(datelunar.getCanChiMonth());
+			tvCanChiMonth.setText("Tháng "+datelunar.getCanChiMonth());
 //			tvYearAm.setText(String.valueOf(datelunar.getYear()));
-			tvCanChiYear.setText(datelunar.getCanChiYear());
+			tvCanChiYear.setText("Năm "+datelunar.getCanChiYear());
 			
 			if(isHoangDao==0)
 			{			
