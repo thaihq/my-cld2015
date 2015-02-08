@@ -13,8 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.pa.ipv01.pacalendar.MainSplash"
-        >
+        <activity android:name="com.pa.ipv01.pacalendar.MainSplash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,8 +31,6 @@
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.MonthCalendar" >
         </activity>
-        <activity android:name="com.pa.ipv01.pacalendar.NoteAdd" >
-        </activity>
         <activity android:name="com.pa.ipv01.pacalendar.OtherView" >
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.VanKhan" >
@@ -47,6 +44,8 @@
         <activity android:name="com.pa.ipv01.pacalendar.Horoscope" >
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.NoteDetail" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.ViewNote" >
         </activity>
     </application>
 

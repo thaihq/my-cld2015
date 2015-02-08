@@ -7,4 +7,11 @@
     <string name="noteadd_detail_tvtitle">Tiêu đề</string>
     <string name="noteadd_detail_tvcontent">Nội dung</string>
 
+    <string-array name="alarm_array">
+        <item>Một lần</item>
+        <item>Lặp lại</item>
+    </string-array>
+
+    <string name="select">Chose Alarm</string>
+
 </resources>

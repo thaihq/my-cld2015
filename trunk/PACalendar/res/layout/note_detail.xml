@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
+    android:background="@drawable/bg3"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="20dp" >
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
 
         <TextView
             android:id="@+id/listitem_tv"
@@ -55,17 +55,41 @@
         android:gravity="center_horizontal"
         android:orientation="vertical" >
 
-        <com.pa.ipv01.business.DatePicker
+        <com.pa.ipv01.object.DatePicker
             android:id="@+id/lay_datepicker"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </com.pa.ipv01.business.DatePicker>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+        </com.pa.ipv01.object.DatePicker>
 
-        <com.pa.ipv01.business.TimePicker
+        <com.pa.ipv01.object.TimePicker
             android:id="@+id/lay_timepicker"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </com.pa.ipv01.business.TimePicker>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+        </com.pa.ipv01.object.TimePicker>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" >
+
+        <Button
+            android:id="@+id/btn_ghichu_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/btn_luu_ghichu" />
+
+        <Button
+            android:id="@+id/btn_ghichu_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/btn_huy_ghichu" />
+    </RelativeLayout>
 
 </LinearLayout>

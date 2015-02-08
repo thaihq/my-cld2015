@@ -1,4 +1,4 @@
-package com.pa.ipv01.business;
+package com.pa.ipv01.object;
 
 import java.util.Calendar;
 
@@ -46,7 +46,8 @@ public class DatePicker extends LinearLayout {
 	private void init(Context mContext) {
 		LayoutInflater inflator = (LayoutInflater) mContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		myPickerView = inflator.inflate(R.layout.datepicker, null);
+		myPickerView = inflator.inflate(com.pa.pacalendar.R.layout.datepicker,
+				null);
 		this.addView(myPickerView);
 
 		initializeReference();
