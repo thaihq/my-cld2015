@@ -2,4 +2,5 @@
 <resources>
     <dimen name="itemlist_note_title">20dp</dimen>
     <dimen name="griditem_cunghd_tvcunghd">15dp</dimen>
+    <dimen name ="btn_height_picker">25dp</dimen>
 </resources>

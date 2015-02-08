@@ -1,5 +1,7 @@
 package com.pa.ipv01.customadapter;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +15,11 @@ import com.pa.pacalendar.R;
 
 public class NoteListAdapter extends ArrayAdapter<objNote> {
 	Activity context;
-	objNote[] myArray = null;
+	ArrayList<objNote> myArray = null;
 	int layoutId;
 
-	public NoteListAdapter(Activity context, int layoutId, objNote[] myArray) {
+	public NoteListAdapter(Activity context, int layoutId,
+			ArrayList<objNote> myArray) {
 		super(context, layoutId, myArray);
 		// TODO Auto-generated constructor stub
 		this.context = context;
@@ -25,7 +28,7 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		ViewHolder holder = null;
 		if (convertView == null) {
@@ -48,7 +51,7 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		objNote note = myArray[position];
+		objNote note = myArray.get(position);
 		holder.title.setText(note.getTitle());
 		holder.content.setText(note.getContent());
 		holder.date.setText(note.getDate().toString().trim());
@@ -58,7 +61,7 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				System.out.println("Clicked");
+				System.out.println("" + position);
 			}
 		});
 		return convertView;

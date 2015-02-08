@@ -66,7 +66,7 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
         tabHost.addTab(spec);
 
         /************* Tab ghi chu ************/
-        intent = new Intent().setClass(this, NoteAdd.class);
+        intent = new Intent().setClass(this, ViewNote.class);
         spec = tabHost.newTabSpec("Tab note").setIndicator("")
                 .setContent(intent);
         tabHost.addTab(spec);

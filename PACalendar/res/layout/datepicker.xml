@@ -10,21 +10,19 @@
         android:id="@+id/month_container"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/month_plus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/up" />
+            android:layout_height="@dimen/btn_height_picker"
+            android:background="@drawable/picker_top" />
 
         <EditText
             android:id="@+id/month_display"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height_picker"
             android:background="@drawable/picker_middle"
             android:focusable="false"
             android:gravity="center"
@@ -34,30 +32,28 @@
         <Button
             android:id="@+id/month_minus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrow" />
+            android:layout_height="@dimen/btn_height_picker"
+            android:background="@drawable/picker_bottom" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginLeft="5dp"
         android:id="@+id/date_container"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/date_plus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/up" />
+            android:layout_height="@dimen/btn_height_picker"
+            android:background="@drawable/picker_top" />
 
         <EditText
             android:id="@+id/date_display"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height_picker"
             android:background="@drawable/picker_middle"
             android:gravity="center"
             android:inputType="number"
@@ -66,30 +62,28 @@
         <Button
             android:id="@+id/date_minus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrow" />
+            android:layout_height="@dimen/btn_height_picker"
+            android:background="@drawable/picker_bottom" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginLeft="5dp"
         android:id="@+id/year_container"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/year_plus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/up" />
+            android:layout_height="@dimen/btn_height_picker"
+            android:background="@drawable/picker_top" />
 
         <EditText
             android:id="@+id/year_display"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/btn_height_picker"
             android:background="@drawable/picker_middle"
             android:gravity="center"
             android:inputType="number"
@@ -98,9 +92,8 @@
         <Button
             android:id="@+id/year_minus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrow" />
+            android:layout_height="@dimen/btn_height_picker"
+            android:background="@drawable/picker_bottom" />
     </LinearLayout>
 
 </LinearLayout>

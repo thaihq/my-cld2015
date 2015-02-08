@@ -7,7 +7,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal" >
 
@@ -15,21 +14,20 @@
             android:id="@+id/hour_container"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
             android:gravity="center"
             android:orientation="vertical" >
 
             <Button
                 android:id="@+id/hour_plus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/up" />
+                android:layout_height="@dimen/btn_height_picker"
+                android:background="@drawable/picker_top" />
 
             <EditText
                 android:id="@+id/hour_display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/btn_height_picker"
                 android:background="@drawable/picker_middle"
                 android:gravity="center"
                 android:inputType="number"
@@ -39,30 +37,28 @@
             <Button
                 android:id="@+id/hour_minus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/arrow" />
+                android:layout_height="@dimen/btn_height_picker"
+                android:background="@drawable/picker_bottom" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/min_container"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
             android:gravity="center"
             android:orientation="vertical" >
 
             <Button
                 android:id="@+id/min_plus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/up" />
+                android:layout_height="@dimen/btn_height_picker"
+                android:background="@drawable/picker_top" />
 
             <EditText
                 android:id="@+id/min_display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/btn_height_picker"
                 android:background="@drawable/picker_middle"
                 android:gravity="center"
                 android:inputType="number"
@@ -71,9 +67,8 @@
             <Button
                 android:id="@+id/min_minus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/arrow" />
+                android:layout_height="@dimen/btn_height_picker"
+                android:background="@drawable/picker_bottom" />
         </LinearLayout>
 
         <LinearLayout
@@ -85,7 +80,7 @@
             <Button
                 android:id="@+id/am_pm"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/btn_height_picker"
                 android:background="@drawable/button_hover"
                 android:text="AM" />
         </LinearLayout>
