@@ -98,6 +98,7 @@ public class DayNow extends Activity implements OnClickListener{
 //			TextView tvYearAm = (TextView) findViewById(R.id.tvYearAM);
 			TextView tvHoangDao= (TextView) findViewById(R.id.tv_hoangdao);
 			TextView tvDanhNgonOrLe=(TextView) findViewById(R.id.tv_danhngon);
+			TextView tvLeap=(TextView) findViewById(R.id.tv_monthnhuan);
 
 			tvMonthYearDuong.setText("Tháng "+datelunar.getMonthSolar()+" Năm "
 											+datelunar.getYearSolar());
@@ -140,6 +141,16 @@ public class DayNow extends Activity implements OnClickListener{
 					tvDanhNgonOrLe.setTextColor(this.getResources().getColor(R.color.red));
 				else
 					tvDanhNgonOrLe.setTextColor(this.getResources().getColor(R.color.white));
+			}
+			
+			if(datelunar.getLunarLeap()==1)
+			{
+				tvLeap.setText("Nhuận Tháng "+datelunar.getMonth());
+				tvLeap.setVisibility(View.VISIBLE);
+			}
+			else 
+			{
+				tvLeap.setVisibility(View.INVISIBLE);
 			}
 			
 		} catch (NullPointerException e) {
