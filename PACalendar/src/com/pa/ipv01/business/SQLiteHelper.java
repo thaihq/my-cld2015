@@ -16,6 +16,8 @@ public class SQLiteHelper {
 	private SQLiteDatabase db;
 	Activity activity;
 
+	public String keytitle, keycontent, keydate, keytime;
+
 	public SQLiteHelper(Activity activity) {
 		super();
 		// TODO Auto-generated constructor stub
@@ -43,9 +45,7 @@ public class SQLiteHelper {
 				null);
 		if (c.moveToFirst()) {
 			db.execSQL("DELETE FROM onenote WHERE title='" + title + "'");
-			showMessage("Success", "Record Deleted");
-		} else {
-		}
+		} 
 	}
 
 	public ArrayList<objNote> showall(ArrayList<objNote> note) {
@@ -60,6 +60,21 @@ public class SQLiteHelper {
 			}
 		}
 		return note;
+	}
+
+	public boolean daynotes(ArrayList<objNote> note, String today) {
+		boolean is = false;
+		note = new ArrayList<objNote>();
+		c = db.rawQuery("SELECT * FROM onenote", null);
+		while (c.moveToNext()) {
+			note.add(new objNote(c.getString(0), c.getString(1),
+					c.getString(2), c.getString(3)));
+			if (c.getString(2).equals(today)) {
+				System.out.println(c.getString(2));
+				is = true;
+			}
+		}
+		return is;
 	}
 
 	public void showMessage(String title, String message) {

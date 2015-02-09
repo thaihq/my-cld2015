@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.pa.ipv01.business.SQLiteHelper;
 import com.pa.ipv01.object.objNote;
 import com.pa.pacalendar.R;
 
@@ -51,7 +52,7 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		objNote note = myArray.get(position);
+		final objNote note = myArray.get(position);
 		holder.title.setText(note.getTitle());
 		holder.content.setText(note.getContent());
 		holder.date.setText(note.getDate().toString().trim());
@@ -62,6 +63,8 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				System.out.println("" + position);
+				SQLiteHelper sqLiteHelper = new SQLiteHelper(context);
+				sqLiteHelper.delete(note.getTitle());
 			}
 		});
 		return convertView;

@@ -27,12 +27,11 @@ public class ViewNote extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.viewnote);
-		
+
 		sqLiteHelper = new SQLiteHelper(this);
 
 		btn_add = (Button) findViewById(R.id.noteadd_btn_add);
 		btn_add.setOnClickListener(new View.OnClickListener() {
-			
 
 			@Override
 			public void onClick(View v) {
@@ -47,6 +46,25 @@ public class ViewNote extends Activity {
 				sqLiteHelper.showall(notes));
 		list = (ListView) findViewById(R.id.noteadd_list);
 		list.setAdapter(adapter);
+
+	}
+
+	public boolean getnotes(String day) {
+		boolean is = false;
+		if (sqLiteHelper.daynotes(notes, day) == true) {
+			is = true;
+		}
+		return is;
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		adapter = new NoteListAdapter(this, R.layout.item_list_noteadd,
+				sqLiteHelper.showall(notes));
+		list = (ListView) findViewById(R.id.noteadd_list);
+		list.setAdapter(adapter);
+		super.onResume();
 	}
 
 }
