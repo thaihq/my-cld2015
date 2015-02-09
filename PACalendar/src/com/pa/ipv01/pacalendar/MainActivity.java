@@ -87,8 +87,8 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
         tabHost.getTabWidget().getChildAt(1).setBackgroundResource(R.drawable.btn_chonngay);
         tabHost.getTabWidget().getChildAt(2).setBackgroundResource(R.drawable.btn_lichthang);
         tabHost.getTabWidget().getChildAt(3).setBackgroundResource(R.drawable.btn_ghichu);
-        tabHost.getTabWidget().getChildAt(4).setBackgroundResource(R.drawable.btn_xemthem);
-        tabHost.getTabWidget().getChildAt(5).setBackgroundResource(R.drawable.btn_vankhan);
+        tabHost.getTabWidget().getChildAt(4).setBackgroundResource(R.drawable.btn_vankhan);
+        tabHost.getTabWidget().getChildAt(5).setBackgroundResource(R.drawable.btn_xemthem);
 
         // Set Tab1 as Default tab and change image
         tabHost.getTabWidget().setCurrentTab(0);
@@ -116,9 +116,9 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
             else if(i==3)
                 tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_ghichu);
             else if(i==4)
-                tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_xemthem);
-            else if(i==5)
                 tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_vankhan);
+            else if(i==5)
+                tabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.btn_xemthem);
         }
 
 
