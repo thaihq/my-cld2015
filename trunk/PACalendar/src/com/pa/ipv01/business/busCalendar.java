@@ -33,7 +33,7 @@ public class busCalendar {
 		String thuofday=getThu(day, month, year);
 				
 		objCalendar datelunar=new objCalendar(objdatelunar[0], objdatelunar[1], objdatelunar[2], hour, canchiyear, canchimonth, canchiday,thuofday,min
-				,day,month,year);
+				,day,month,year,objdatelunar[3]);
 		
 		return datelunar;
 		

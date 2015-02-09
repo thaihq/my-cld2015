@@ -71,14 +71,15 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
                 .setContent(intent);
         tabHost.addTab(spec);
 
+        /************** Tab van khan ***************/
+        intent = new Intent().setClass(this, VanKhan.class);
+        spec = tabHost.newTabSpec("Tab van khan").setIndicator("")
+                .setContent(intent);
+        tabHost.addTab(spec);
+        
         /************* Tab xem them ************/
         intent = new Intent().setClass(this, OtherView.class);
         spec = tabHost.newTabSpec("Tab other view").setIndicator("")
-                .setContent(intent);
-        tabHost.addTab(spec);
-        /**************/
-        intent = new Intent().setClass(this, VanKhan.class);
-        spec = tabHost.newTabSpec("Tab van khan").setIndicator("")
                 .setContent(intent);
         tabHost.addTab(spec);
 

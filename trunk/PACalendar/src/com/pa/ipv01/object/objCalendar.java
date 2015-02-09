@@ -14,7 +14,14 @@ public class objCalendar {
 	private String canChiMonth;
 	private String canChiDay;
 	private String thuOfWeek;
+	private int lunarLeap;
 	
+	public int getLunarLeap() {
+		return lunarLeap;
+	}
+	public void setLunarLeap(int lunarLeap) {
+		this.lunarLeap = lunarLeap;
+	}
 	public int getHour() {
 		return hour;
 	}
@@ -92,7 +99,7 @@ public class objCalendar {
 	
 	public objCalendar(int day, int month,int year,int hour,String canchiyear
 			,String canchimonth,String canchiday, String thuofday,int min
-			,int daysolar, int monthsolar, int yearsolar) 
+			,int daysolar, int monthsolar, int yearsolar, int leap) 
 	{
 		this.day=day;
 		this.month=month;
@@ -106,5 +113,6 @@ public class objCalendar {
 		this.daySolar=daysolar;
 		this.monthSolar=monthsolar;
 		this.yearSolar=yearsolar;
+		this.lunarLeap=leap;
 	}
 }
