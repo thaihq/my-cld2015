@@ -100,6 +100,7 @@ public class NoteDetail extends Activity implements OnClickListener,
 			time = mytime.getH() + ":" + mytime.getM() + " " + mytime.getType();
 
 			sqLiteHelper.insert(title, content, date, time);
+			// update
 			finish();
 
 			break;
