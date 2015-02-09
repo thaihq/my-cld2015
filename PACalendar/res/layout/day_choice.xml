@@ -29,7 +29,8 @@
         android:layout_below="@+id/tv_hint"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:calendarViewShown="false" />
+		android:calendarViewShown="false"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
