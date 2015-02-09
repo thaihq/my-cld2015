@@ -7,19 +7,19 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.pa.ipv01.resource.Zodiacres;
+import com.pa.ipv01.resource.Horoscoperes;
 import com.pa.pacalendar.R;
 
-public class ZodiacDetail extends Activity {
+public class HoroscopeDetail extends Activity {
 	private WebView webView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.zodiacdetail);
+		setContentView(R.layout.horoscopedetail);
 
-		webView = (WebView) findViewById(R.id.zodiac_webview);
+		webView = (WebView) findViewById(R.id.horoscope_webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
@@ -31,13 +31,12 @@ public class ZodiacDetail extends Activity {
 			}
 
 		});
-
-		for (int i = 0; i < Zodiacres.cunghd.length; i++) {
-			if (Zodiac.isClicked.equals(Zodiacres.cunghd[i])) {
-				webView.loadUrl(Zodiacres.cunghdUrl[i]);
-
+		for (int i = 0; i < Horoscoperes.tuvi.length; i++) {
+			if (Horoscope.isHoroscope == Horoscoperes.tuvi[i]) {
+				webView.loadUrl(Horoscoperes.tuviUrl[i]);
 			}
 		}
+
 	}
 
 	@Override
@@ -46,4 +45,5 @@ public class ZodiacDetail extends Activity {
 		super.onDestroy();
 		finish();
 	}
+
 }

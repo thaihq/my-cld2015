@@ -47,6 +47,10 @@
         </activity>
         <activity android:name="com.pa.ipv01.pacalendar.ViewNote" >
         </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.HoroscopeDetail" >
+        </activity>
+        <activity android:name="com.pa.ipv01.pacalendar.LifeTips" >
+        </activity>
     </application>
 
 </manifest>

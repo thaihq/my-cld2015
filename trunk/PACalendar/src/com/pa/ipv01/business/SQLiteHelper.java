@@ -16,8 +16,6 @@ public class SQLiteHelper {
 	private SQLiteDatabase db;
 	Activity activity;
 
-	public String keytitle, keycontent, keydate, keytime;
-
 	public SQLiteHelper(Activity activity) {
 		super();
 		// TODO Auto-generated constructor stub
@@ -45,7 +43,7 @@ public class SQLiteHelper {
 				null);
 		if (c.moveToFirst()) {
 			db.execSQL("DELETE FROM onenote WHERE title='" + title + "'");
-		} 
+		}
 	}
 
 	public ArrayList<objNote> showall(ArrayList<objNote> note) {
@@ -67,14 +65,30 @@ public class SQLiteHelper {
 		note = new ArrayList<objNote>();
 		c = db.rawQuery("SELECT * FROM onenote", null);
 		while (c.moveToNext()) {
-			note.add(new objNote(c.getString(0), c.getString(1),
-					c.getString(2), c.getString(3)));
 			if (c.getString(2).equals(today)) {
-				System.out.println(c.getString(2));
 				is = true;
 			}
 		}
 		return is;
+	}
+
+	public void aNotes(ArrayList<objNote> note, String today) {
+		note = new ArrayList<objNote>();
+		c = db.rawQuery("SELECT * FROM onenote", null);
+		StringBuffer buffer = new StringBuffer();
+		while (c.moveToNext()) {
+			if (c.getString(2).equals(today)) {
+				buffer.append("-tiêu đề: " + c.getString(0) + "\n");
+				buffer.append("  +nội dung: " + c.getString(1) + "\n");
+				buffer.append("  +ngày: " + c.getString(2) + "\n");
+				buffer.append("  +giờ: " + c.getString(3) + "\n\n");
+			}
+		}
+		showMessage("Ghi chú", buffer.toString());
+	}
+
+	public void destroy() {
+		db.close();
 	}
 
 	public void showMessage(String title, String message) {

@@ -17,9 +17,9 @@ import com.pa.pacalendar.R;
 
 public class ViewNote extends Activity {
 	private ListView list;
-	private NoteListAdapter adapter;
+	public NoteListAdapter adapter;
 	private Button btn_add;
-	private ArrayList<objNote> notes;
+	public ArrayList<objNote> notes;
 	private SQLiteHelper sqLiteHelper;
 
 	@Override
@@ -49,14 +49,6 @@ public class ViewNote extends Activity {
 
 	}
 
-	public boolean getnotes(String day) {
-		boolean is = false;
-		if (sqLiteHelper.daynotes(notes, day) == true) {
-			is = true;
-		}
-		return is;
-	}
-
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -65,6 +57,13 @@ public class ViewNote extends Activity {
 		list = (ListView) findViewById(R.id.noteadd_list);
 		list.setAdapter(adapter);
 		super.onResume();
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		sqLiteHelper.destroy();
 	}
 
 }
