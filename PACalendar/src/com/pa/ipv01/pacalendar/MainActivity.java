@@ -137,9 +137,9 @@ public class MainActivity extends TabActivity implements TabHost.OnTabChangeList
         else if(tabHost.getCurrentTab()==3)
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_ghichu_down);
         else if(tabHost.getCurrentTab()==4)
-            tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_xemthem_down);
-        else if(tabHost.getCurrentTab()==5)
             tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_vankhan_down);
+        else if(tabHost.getCurrentTab()==5)
+            tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundResource(R.drawable.btn_xemthem_down);
     }
     
     static final int DATE_DIALOG_ID=999; 
