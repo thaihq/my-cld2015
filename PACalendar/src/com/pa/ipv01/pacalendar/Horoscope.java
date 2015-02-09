@@ -3,6 +3,7 @@ package com.pa.ipv01.pacalendar;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -19,14 +20,14 @@ public class Horoscope extends Activity {
 	private ArrayList<Integer> icon;
 	private GridView gridView;
 	private HoroscopeGridAdapter adapter;
-	public static int isClicked;
+	public static int isHoroscope;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.horoscope);
-		
+
 		prepareListData();
 		adapter = new HoroscopeGridAdapter(this, title, icon);
 		gridView = (GridView) findViewById(R.id.ac_tuvi_grid);
@@ -36,15 +37,16 @@ public class Horoscope extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
-				isClicked = title.get(position);
+				isHoroscope = title.get(position);
 
-				// Intent intent = new Intent(Horoscope.this, TVDetail.class);
-				// startActivity(intent);
+				Intent intent = new Intent(Horoscope.this,
+						HoroscopeDetail.class);
+				startActivity(intent);
 
 			}
 		});
 	}
-	
+
 	public void prepareListData() {
 
 		title = new ArrayList<Integer>();

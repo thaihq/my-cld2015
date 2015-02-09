@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.pa.ipv01.business.SQLiteHelper;
+import com.pa.ipv01.business.typetime;
 import com.pa.ipv01.object.DatePicker;
 import com.pa.ipv01.object.DatePicker.DateWatcher;
 import com.pa.ipv01.object.TimePicker;
@@ -97,7 +98,7 @@ public class NoteDetail extends Activity implements OnClickListener,
 			title = ed_title.getText().toString();
 			content = ed_content.getText().toString();
 			date = mydate.getD() + "/" + mydate.getM() + "/" + mydate.getY();
-			time = mytime.getH() + ":" + mytime.getM() + " " + mytime.getType();
+			time = new typetime().Totime(mytime);
 
 			sqLiteHelper.insert(title, content, date, time);
 			// update

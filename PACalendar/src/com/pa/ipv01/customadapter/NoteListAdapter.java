@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pa.ipv01.business.SQLiteHelper;
 import com.pa.ipv01.object.objNote;
@@ -52,7 +53,9 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
+
 		final objNote note = myArray.get(position);
+
 		holder.title.setText(note.getTitle());
 		holder.content.setText(note.getContent());
 		holder.date.setText(note.getDate().toString().trim());
@@ -65,6 +68,10 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 				System.out.println("" + position);
 				SQLiteHelper sqLiteHelper = new SQLiteHelper(context);
 				sqLiteHelper.delete(note.getTitle());
+				Toast.makeText(context, "Xóa ghi chú: " + note.getTitle(),
+						Toast.LENGTH_SHORT).show();
+				myArray.remove(position);
+				notifyDataSetChanged();
 			}
 		});
 		return convertView;

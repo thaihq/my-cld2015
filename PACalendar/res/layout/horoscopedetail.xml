@@ -2,18 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
+    android:background="@drawable/bg_noidung"
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_3_hoangdao" >
-    </LinearLayout>
-
     <WebView
-        android:id="@+id/zodiac_webview"
+        android:id="@+id/horoscope_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

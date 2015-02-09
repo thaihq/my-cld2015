@@ -31,15 +31,20 @@ public class Horoscoperes {
 	public static final int titletuat = R.drawable.tuat;
 	public static final int titlehoi = R.drawable.hoi;
 
-	public static final String[] tuviUrl = { "", "", "", "", "", "", "", "",
-			"", "", "", "", };
+	public static final String[] tuviUrl = { "file:///android_asset/tv_tys.html",
+			"file:///android_asset/tv_suu.html",
+			"file:///android_asset/tv_dan.html",
+			"file:///android_asset/tv_mao.html",
+			"file:///android_asset/tv_thin.html",
+			"file:///android_asset/tv_ti.html",
+			"file:///android_asset/tv_ngo.html",
+			"file:///android_asset/tv_mui.html",
+			"file:///android_asset/tv_than.html",
+			"file:///android_asset/tv_dau.html",
+			"file:///android_asset/tv_tuat.html",
+			"file:///android_asset/tv_hoi.html", };
 	public static final int[] tuvi = { titlety, titlesuu, titledan, titlemao,
 			titlethin, titleti, titlengo, titlemui, titlethan, titledau,
 			titletuat, titlehoi };
-	public static final int[] icon_tvdetail = { R.drawable.iconty,
-			R.drawable.iconsuu, R.drawable.icondan, R.drawable.iconmao,
-			R.drawable.iconthin, R.drawable.icontyj, R.drawable.iconngo,
-			R.drawable.iconmui, R.drawable.iconthan, R.drawable.icondau,
-			R.drawable.icontuat, R.drawable.iconhoi, };
 
 }
