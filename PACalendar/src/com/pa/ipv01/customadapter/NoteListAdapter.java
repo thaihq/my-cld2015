@@ -65,7 +65,6 @@ public class NoteListAdapter extends ArrayAdapter<objNote> {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				System.out.println("" + position);
 				SQLiteHelper sqLiteHelper = new SQLiteHelper(context);
 				sqLiteHelper.delete(note.getTitle());
 				Toast.makeText(context, "Xóa ghi chú: " + note.getTitle(),
