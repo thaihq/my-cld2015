@@ -64,43 +64,18 @@ public class DayNow extends Activity implements OnClickListener {
 		Button buttonDetail = (Button) findViewById(R.id.btn_detail);
 		Button buttonPre = (Button) findViewById(R.id.btn_pre);
 		Button buttonNext = (Button) findViewById(R.id.btn_next);
-
 		btnNote = (Button) findViewById(R.id.btn_ghichu);
-		btnNote.setOnClickListener(this);
-		visibleNote(btnNote);
 
 		date = new Date();
 		getDay(date);
-
+		
 		viewFlipper.setOnTouchListener(this.listener);
+		btnNote.setOnClickListener(this);
 		buttonNext.setOnClickListener(this);
 		buttonPre.setOnClickListener(this);
 		buttonHomNay.setOnClickListener(this);
 		buttonDetail.setOnClickListener(this);
 
-	}
-
-	private void visibleNote(Button btnNote) {
-		if (notes()) {
-			btnNote.setVisibility(View.VISIBLE);
-			System.out.println(notes());
-		} else {
-			System.out.println(notes());
-		}
-	}
-
-	private boolean notes() {
-		SQLiteHelper helper = new SQLiteHelper(this);
-		ViewNote note = new ViewNote();
-		boolean is = helper.daynotes(note.notes, datenote);//<-----------day now
-
-		return is;
-	}
-
-	private void showdialog() {
-		SQLiteHelper helper = new SQLiteHelper(this);
-		ViewNote note = new ViewNote();
-		helper.aNotes(note.notes, datenote);//<-------------------day now
 	}
 
 	private void getDay(Date date) {
@@ -186,47 +161,50 @@ public class DayNow extends Activity implements OnClickListener {
 
 	private void getDayDetail(Date date) {
 		// calendar.setTime(date);
+		try {
+			buscalendar = new busCalendar();
+			datelunar = new objCalendar();
+			datelunar = buscalendar.getConvertSolar2Lunar(date);
 
-		buscalendar = new busCalendar();
-		datelunar = new objCalendar();
-		datelunar = buscalendar.getConvertSolar2Lunar(date);
+			String DaySolar = "+ Ngày: " + (datelunar.getDaySolar()) + " - "
+					+ (datelunar.getMonthSolar()) + " - "
+					+ datelunar.getYearSolar();
 
-		String DaySolar = "+ Ngày: " + (datelunar.getDaySolar()) + " - "
-				+ (datelunar.getMonthSolar()) + " - "
-				+ datelunar.getYearSolar();
+			final Dialog dialog = new Dialog(context);
+			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			dialog.setContentView(R.layout.dialog_day_detail);
 
-		final Dialog dialog = new Dialog(context);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.dialog_day_detail);
+			TextView textDayDuong = (TextView) dialog
+					.findViewById(R.id.tvDayDuongDt);
+			TextView textThu = (TextView) dialog.findViewById(R.id.tvThuDt);
+			TextView textDayAm = (TextView) dialog.findViewById(R.id.tvDayAmDt);
+			TextView textYearCanChi = (TextView) dialog
+					.findViewById(R.id.tvNamCanChiDt);
+			TextView textMonthCanChi = (TextView) dialog
+					.findViewById(R.id.tvThangCanChiDt);
+			TextView textDayCanChi = (TextView) dialog
+					.findViewById(R.id.tvDayCanChiDt);
 
-		TextView textDayDuong = (TextView) dialog
-				.findViewById(R.id.tvDayDuongDt);
-		TextView textThu = (TextView) dialog.findViewById(R.id.tvThuDt);
-		TextView textDayAm = (TextView) dialog.findViewById(R.id.tvDayAmDt);
-		TextView textYearCanChi = (TextView) dialog
-				.findViewById(R.id.tvNamCanChiDt);
-		TextView textMonthCanChi = (TextView) dialog
-				.findViewById(R.id.tvThangCanChiDt);
-		TextView textDayCanChi = (TextView) dialog
-				.findViewById(R.id.tvDayCanChiDt);
+			textDayDuong.setText(DaySolar);
+			textThu.setText("+ Tháng: " + datelunar.getThuOfWeek());
+			textDayAm.setText("+ Ngày: " + datelunar.getDay() + " - "
+					+ datelunar.getMonth() + " - " + datelunar.getYear());
+			textYearCanChi.setText("+ Năm " + datelunar.getCanChiYear());
+			textMonthCanChi.setText("+ Tháng " + datelunar.getCanChiMonth());
+			textDayCanChi.setText("+ Ngày " + datelunar.getCanChiDay());
 
-		textDayDuong.setText(DaySolar);
-		textThu.setText("+ Tháng: " + datelunar.getThuOfWeek());
-		textDayAm.setText("+ Ngày: " + datelunar.getDay() + " - "
-				+ datelunar.getMonth() + " - " + datelunar.getYear());
-		textYearCanChi.setText("+ Năm " + datelunar.getCanChiYear());
-		textMonthCanChi.setText("+ Tháng " + datelunar.getCanChiMonth());
-		textDayCanChi.setText("+ Ngày " + datelunar.getCanChiDay());
+			Button dialogButton = (Button) dialog.findViewById(R.id.btn_dia_close);
+			dialogButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					dialog.dismiss();
+				}
+			});
 
-		Button dialogButton = (Button) dialog.findViewById(R.id.btn_dia_close);
-		dialogButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-			}
-		});
-
-		dialog.show();
+			dialog.show();
+		} catch (NullPointerException e) {
+			Log.e("loi->", e.toString());
+		}
 	}
 
 	private Date getDayWithTouch(Date date, int day) {
@@ -313,6 +291,29 @@ public class DayNow extends Activity implements OnClickListener {
 			return true;
 		}
 	};
+
+
+	private void visibleNote(Button btnNote) {
+		if (notes()) {
+			btnNote.setVisibility(View.VISIBLE);
+		} else {
+			btnNote.setVisibility(View.INVISIBLE);
+		}
+	}
+
+	private boolean notes() {
+		SQLiteHelper helper = new SQLiteHelper(this);
+		ViewNote note = new ViewNote();
+		boolean is = helper.daynotes(note.notes, datenote);
+
+		return is;
+	}
+
+	private void showdialog() {
+		SQLiteHelper helper = new SQLiteHelper(this);
+		ViewNote note = new ViewNote();
+		helper.aNotes(note.notes, datenote);
+	}
 
 	private View getDayNow() {
 		inflater = getLayoutInflater();
