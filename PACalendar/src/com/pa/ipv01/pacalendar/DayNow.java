@@ -67,7 +67,7 @@ public class DayNow extends Activity implements OnClickListener {
 
 		btnNote = (Button) findViewById(R.id.btn_ghichu);
 		btnNote.setOnClickListener(this);
-//		visibleNote(btnNote);
+		visibleNote(btnNote);
 
 		date = new Date();
 		getDay(date);

@@ -101,14 +101,9 @@ public class NoteDetail extends Activity implements OnClickListener,
 			time = new typetime().Totime(mytime);
 
 			sqLiteHelper.insert(title, content, date, time);
-			// update
-			finish();
-
 			break;
 		case R.id.btn_ghichu_cancel:
-			ed_title.setText("");
-			ed_content.setText("");
-			ed_title.setFocusable(true);
+			finish();
 
 			break;
 
