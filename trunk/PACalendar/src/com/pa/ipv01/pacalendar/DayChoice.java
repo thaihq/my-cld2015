@@ -47,20 +47,19 @@ public class DayChoice extends Activity implements OnDateSetListener,
 
 		btnDongY.setOnClickListener(this);
 		btnHuy.setOnClickListener(this);
-		// showDialog(DATE_DIALOG_ID);
 	}
 
-	@Override
-	@Deprecated
-	protected Dialog onCreateDialog(int id) {
-		// TODO Auto-generated method stub
-		// return super.onCreateDialog(id);
-		switch (id) {
-		case DATE_DIALOG_ID:
-			return new DatePickerDialog(this, this, year, moth, day);
-		}
-		return null;
-	}
+//	@Override
+//	@Deprecated
+//	protected Dialog onCreateDialog(int id) {
+//		// TODO Auto-generated method stub
+//		// return super.onCreateDialog(id);
+//		switch (id) {
+//		case DATE_DIALOG_ID:
+//			return new DatePickerDialog(this, this, year, moth, day);
+//		}
+//		return null;
+//	}
 
 	@Override
 	public void onDateSet(DatePicker dp, int selectedYear, int selMonth,
@@ -76,16 +75,15 @@ public class DayChoice extends Activity implements OnDateSetListener,
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v.getId() == (R.id.btn_dongy)) {
-			btnDongY.setBackgroundResource(R.drawable.btn_dongy_down);
 			day = dpRes.getDayOfMonth();
 			moth = dpRes.getMonth();
 			year = dpRes.getYear();
 			cal.set(year, moth, day);
 			DayNow.date = cal.getTime();
 			MainActivity.tabHost.setCurrentTab(0);
-		} else if (v.getId() == (R.id.btn_huy))
-			btnHuy.setBackgroundResource(R.drawable.btn_huy_down);
-		MainActivity.tabHost.setCurrentTab(0);
+		}
+		else if (v.getId() == (R.id.btn_huy))
+			MainActivity.tabHost.setCurrentTab(0);
 	}
 
 	@Override
