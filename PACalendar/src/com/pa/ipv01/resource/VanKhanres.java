@@ -74,7 +74,7 @@ public class VanKhanres {
 
 	// giaihan
 	public static final String benhtat = "Khấn Giải Trừ Bệnh Tật";
-	public static final String saohan = "Khấn Sao Giải Hạn";
+	public static final String dangsao = "Khấn Sao Giải Hạn";
 	public static final String ledang = "Lễ Dâng Sao Giải Hạn Tết Nguyên Tiêu";
 
 	public static final String thammo = "Khấn Lễ Thăm Mộ";
