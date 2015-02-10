@@ -31,10 +31,12 @@ public class SQLiteHelper {
 				|| content.toString().trim().length() == 0
 				|| date.toString().trim().length() == 0
 				|| time.toString().trim().length() == 0) {
+			showMessage("Lỗi", "Không được bỏ trống");
 			return;
 		} else {
 			db.execSQL("INSERT INTO onenote VALUES('" + title + "','" + content
 					+ "','" + date + "','" + time + "');");
+			activity.finish();
 		}
 	}
 
