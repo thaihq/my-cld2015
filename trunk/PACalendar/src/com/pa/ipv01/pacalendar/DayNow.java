@@ -48,7 +48,7 @@ public class DayNow extends Activity implements OnClickListener {
 	LayoutInflater inflater;
 	static final float wideScreen = 100.0f;
 	RelativeLayout rDialogView;
-
+	String datenote;
 	Button btnNote;
 
 	@Override
@@ -67,7 +67,7 @@ public class DayNow extends Activity implements OnClickListener {
 
 		btnNote = (Button) findViewById(R.id.btn_ghichu);
 		btnNote.setOnClickListener(this);
-		visibleNote(btnNote);
+//		visibleNote(btnNote);
 
 		date = new Date();
 		getDay(date);
@@ -92,7 +92,7 @@ public class DayNow extends Activity implements OnClickListener {
 	private boolean notes() {
 		SQLiteHelper helper = new SQLiteHelper(this);
 		ViewNote note = new ViewNote();
-		boolean is = helper.daynotes(note.notes, "13/2/2015");//<-----------day now
+		boolean is = helper.daynotes(note.notes, datenote);//<-----------day now
 
 		return is;
 	}
@@ -100,7 +100,7 @@ public class DayNow extends Activity implements OnClickListener {
 	private void showdialog() {
 		SQLiteHelper helper = new SQLiteHelper(this);
 		ViewNote note = new ViewNote();
-		helper.aNotes(note.notes, "13/2/2015");//<-------------------day now
+		helper.aNotes(note.notes, datenote);//<-------------------day now
 	}
 
 	private void getDay(Date date) {
@@ -112,6 +112,7 @@ public class DayNow extends Activity implements OnClickListener {
 			buscalendar = new busCalendar();
 			datelunar = new objCalendar();
 			datelunar = buscalendar.getConvertSolar2Lunar(date);
+			datenote=datelunar.getDaySolar()+"/"+datelunar.getMonthSolar()+"/"+datelunar.getYearSolar();
 			int isHoangDao = buscalendar
 					.hoangDao(
 							datelunar.getMonth(),
@@ -124,12 +125,9 @@ public class DayNow extends Activity implements OnClickListener {
 			TextView tvMonthYearDuong = (TextView) findViewById(R.id.tv_monthyearduong);
 			TextView tvThuDay = (TextView) findViewById(R.id.tv_thu);
 			TextView tvCanChiYear = (TextView) findViewById(R.id.tv_canchiyear);
-			// TextView tvCanChiDay = (TextView) findViewById(R.id.tvCanChiDay);
 			TextView tvCanChiMonth = (TextView) findViewById(R.id.tv_canchimonth);
-			// TextView tvHour = (TextView) findViewById(R.id.tvGio);
 			TextView tvDayAM = (TextView) findViewById(R.id.tv_dayam);
 			TextView tvMothAm = (TextView) findViewById(R.id.tv_montham);
-			// TextView tvYearAm = (TextView) findViewById(R.id.tvYearAM);
 			TextView tvHoangDao = (TextView) findViewById(R.id.tv_hoangdao);
 			TextView tvDanhNgonOrLe = (TextView) findViewById(R.id.tv_danhngon);
 			TextView tvLeap = (TextView) findViewById(R.id.tv_monthnhuan);
@@ -139,12 +137,9 @@ public class DayNow extends Activity implements OnClickListener {
 			tvThuDay.setText(datelunar.getThuOfWeek());
 			getIcDate(datelunar.getDaySolar());
 			getIcCanChiDay(datelunar);
-			// tvHour.setText(datelunar.getHour()+":"+datelunar.getMin()+"Giờ");
 			tvDayAM.setText(String.valueOf(datelunar.getDay()));
-			// tvCanChiDay.setText(datelunar.getCanChiDay());
 			tvMothAm.setText(String.valueOf(datelunar.getMonth()));
 			tvCanChiMonth.setText("Tháng " + datelunar.getCanChiMonth());
-			// tvYearAm.setText(String.valueOf(datelunar.getYear()));
 			tvCanChiYear.setText("Năm " + datelunar.getCanChiYear());
 
 			if (isHoangDao == 0) {
@@ -182,6 +177,8 @@ public class DayNow extends Activity implements OnClickListener {
 				tvLeap.setVisibility(View.INVISIBLE);
 			}
 
+			visibleNote(btnNote);
+			
 		} catch (NullPointerException e) {
 			Log.e("loi->", e.toString());
 		}
