@@ -22,6 +22,7 @@ public class VanKhanDetail extends Activity {
 				WebView webView = new WebView(this);
 				webView.getSettings().setJavaScriptEnabled(true);
 				webView.loadUrl(VanKhanDetailres.vankhanUrl[i]);
+				System.out.println(""+VanKhanDetailres.vankhanUrl[i]);
 				webView.setBackgroundColor(Color.TRANSPARENT);
 				setContentView(webView);
 			}

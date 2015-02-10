@@ -183,7 +183,7 @@ public class VanKhan extends Activity {
 
 		List<String> giaihan = new ArrayList<String>();
 		giaihan.add(VanKhanres.benhtat);
-		giaihan.add(VanKhanres.saohan);
+		giaihan.add(VanKhanres.dangsao);
 		giaihan.add(VanKhanres.ledang);
 
 		listDataChild.put(listDataHeader.get(0), letet);
