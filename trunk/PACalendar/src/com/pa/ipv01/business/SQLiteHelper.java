@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.pa.ipv01.object.objNote;
+import com.pa.ipv01.resource.Noteres;
 
 public class SQLiteHelper {
 
@@ -80,10 +81,10 @@ public class SQLiteHelper {
 		StringBuffer buffer = new StringBuffer();
 		while (c.moveToNext()) {
 			if (c.getString(2).equals(today)) {
-				buffer.append("-tiêu đề: " + c.getString(0) + "\n");
-				buffer.append("  +nội dung: " + c.getString(1) + "\n");
-				buffer.append("  +ngày: " + c.getString(2) + "\n");
-				buffer.append("  +giờ: " + c.getString(3) + "\n\n");
+				buffer.append(Noteres.title + c.getString(0) + "\n");
+				buffer.append(Noteres.content + c.getString(1) + "\n");
+				buffer.append(Noteres.date + c.getString(2) + "\n");
+				buffer.append(Noteres.time + c.getString(3) + "\n\n");
 			}
 		}
 		showMessage("Ghi chú", buffer.toString());
