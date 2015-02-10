@@ -43,14 +43,14 @@
             android:id="@+id/btn_dongy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_dongy" />
+            android:background="@drawable/button_dongy_selector" />
 
         <Button
             android:id="@+id/btn_huy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/btn_huy" />
+            android:background="@drawable/button_huy_selector" />
     </LinearLayout>
 
 </RelativeLayout>

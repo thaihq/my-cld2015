@@ -15,7 +15,7 @@
             android:layout_height="25.0dip"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/tv_monthyearduong"
-            android:background="@drawable/pre" />
+            android:background="@drawable/button_pre_selector" />
 
         <TextView
             android:id="@+id/tv_monthyearduong"
@@ -33,7 +33,7 @@
             android:layout_height="25.0dip"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/tv_monthyearduong"
-            android:background="@drawable/next" />
+            android:background="@drawable/button_next_selector" />
     </RelativeLayout>
 
     <RelativeLayout
