@@ -186,7 +186,7 @@ public class DayNow extends Activity implements OnClickListener {
 					.findViewById(R.id.tvDayCanChiDt);
 
 			textDayDuong.setText(DaySolar);
-			textThu.setText("+ Tháng: " + datelunar.getThuOfWeek());
+			textThu.setText("+ " + datelunar.getThuOfWeek());
 			textDayAm.setText("+ Ngày: " + datelunar.getDay() + " - "
 					+ datelunar.getMonth() + " - " + datelunar.getYear());
 			textYearCanChi.setText("+ Năm " + datelunar.getCanChiYear());
